@@ -20,6 +20,7 @@ class PlatformMap extends StatefulWidget {
     this.tiltGesturesEnabled = true,
     this.myLocationEnabled = false,
     this.myLocationButtonEnabled = false,
+    this.mapToolbarEnabled = true,
     this.padding = const EdgeInsets.all(0),
     this.trafficEnabled = false,
     this.markers = const <Marker>{},
@@ -163,6 +164,10 @@ class PlatformMap extends StatefulWidget {
   /// When this set is empty, the map will only handle pointer events for gestures that
   /// were not claimed by any other gesture recognizer.
   final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+
+  /// Enables or disables map toolbar on `GoogleMaps`
+  final bool mapToolbarEnabled;
+
   @override
   _PlatformMapState createState() => _PlatformMapState();
 }
@@ -191,6 +196,7 @@ class _PlatformMapState extends State<PlatformMap> {
         zoomControlsEnabled: widget.zoomControlsEnabled,
         zoomGesturesEnabled: widget.zoomGesturesEnabled,
         scrollGesturesEnabled: widget.scrollGesturesEnabled,
+        mapToolbarEnabled: widget.mapToolbarEnabled,
         onMapCreated: _onMapCreated,
         onCameraMove: _onCameraMove,
         onTap: _onTap,
