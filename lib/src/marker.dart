@@ -178,6 +178,7 @@ class Marker {
         draggable: this.draggable,
         infoWindow: this.infoWindow.googleMapsInfoWindow,
         onTap: this.onTap,
+        consumeTapEvents: this.consumeTapEvents,
         icon: this.icon?.bitmapDescriptor ??
             BitmapDescriptor.defaultMarker?.bitmapDescriptor,
         visible: this.visible,
